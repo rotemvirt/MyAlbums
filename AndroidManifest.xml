@@ -22,6 +22,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.myalbums.AlbumEditer"
+            android:label="@string/title_activity_album_editer" >
+        </activity>
     </application>
 
 </manifest>
