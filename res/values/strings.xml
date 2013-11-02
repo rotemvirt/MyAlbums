@@ -14,5 +14,11 @@
     <string name="album_name">Album Name</string>
     <string name="enter_new_name">Enter New Name</string>
     <string name="next">Next</string>
+    <string name="title_activity_add_picture">AddPicture</string>
+    <string name="upload_from_gallery">Upload from gallery</string>
+    <string name="login">Login</string>
+    <string name="my_albums">My Albums</string>
+    <string name="new_album">New Album</string>
+    <string name="take_a_picture">Take a Picture</string>
 
 </resources>

@@ -1,8 +1,11 @@
 package com.example.myalbums;
 
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
 
 public class MainActivity extends Activity {
 
@@ -18,5 +21,14 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-
+	
+	public void onClickNewAlbum(View v){
+		Intent newAlbumIntent = new Intent(this,AlbumEditer.class);
+		startActivity(newAlbumIntent);
+	}
+	public void uploadFromGallery(){
+		Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
+		photoPickerIntent.setType("image/*");
+		startActivityForResult(photoPickerIntent, 100);  
+	}
 }
