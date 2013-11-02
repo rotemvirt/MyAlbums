@@ -26,9 +26,4 @@ public class MainActivity extends Activity {
 		Intent newAlbumIntent = new Intent(this,AlbumEditer.class);
 		startActivity(newAlbumIntent);
 	}
-	public void uploadFromGallery(){
-		Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
-		photoPickerIntent.setType("image/*");
-		startActivityForResult(photoPickerIntent, 100);  
-	}
 }
