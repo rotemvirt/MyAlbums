@@ -24,6 +24,12 @@
        android:onClick="CemraApp">
        
    </Button>
+   <ImageView 
+       android:id="@+id/Addimage"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content" android:contentDescription="@dimen/activity_vertical_margin">
+       
+   </ImageView>
    
 
 </LinearLayout>
