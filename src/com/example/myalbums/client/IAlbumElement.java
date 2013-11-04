@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 
 /*
- * Author: Rotem Virt
+ * Author: Rotem Virt 
  * gmail: rotemvirt@gmail.com
  * Date of Creation: October 31st 2013
  */
