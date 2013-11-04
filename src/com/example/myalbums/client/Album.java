@@ -1,6 +1,6 @@
 package com.example.myalbums.client;
 
-import java.util.Collection;
+import java.util.List;
 import java.util.LinkedList;
 
 import android.net.Uri;
@@ -17,8 +17,8 @@ public class Album implements IAlbum {
 	
 	private String name;
 	private String description;
-	private Collection<IAlbumPage> pages;
-	private Collection<Uri> locations;
+	private List<IAlbumPage> pages;
+	private List<Uri> locations;
 	
 	/**
 	 * 
@@ -26,16 +26,16 @@ public class Album implements IAlbum {
 	 * @param d The album's description
 	 */
 	public Album(String n, String d){
-		n = name;
-		d = description;
+		name = n;
+		description = d;
 		pages = new LinkedList<IAlbumPage>();
 		locations = new LinkedList<Uri>();
 	}
 
 
 	@Override
-	public Collection<IAlbumPage> GetPages() {
-		final Collection<IAlbumPage> $ = pages;
+	public List<IAlbumPage> GetPages() {
+		final List<IAlbumPage> $ = pages;
 		return $;
 	}
 
@@ -53,14 +53,18 @@ public class Album implements IAlbum {
 	}
 
 	@Override
-	public Collection<Uri> GetLocations() {
-		final Collection<Uri> $ = locations;
+	public List<Uri> GetLocations() {
+		final List<Uri> $ = locations;
 		return $;
 	}
 
 	@Override
-	public void AddPage(IAlbumPage p) {
-		pages.add(p);
+	public void AddPage(IAlbumPage p, int i) throws AlbumIndexOutOfBounds {
+		try{
+			pages.add(i,p);
+		}catch(IndexOutOfBoundsException e){
+			throw new AlbumIndexOutOfBounds();
+		}
 	}
 
 	@Override

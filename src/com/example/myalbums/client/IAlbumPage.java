@@ -1,6 +1,6 @@
 package com.example.myalbums.client;
 
-import java.util.Collection;
+import java.util.List;
 
 
 
@@ -16,14 +16,16 @@ public interface IAlbumPage {
 	 * 
 	 * @return the page's elements
 	 */
-	public Collection<IAlbumElement> GetElements();
+	public List<IAlbumElement> GetElements();
 	
 	
 	/**
-	 * Adds a given element to the page at the end of it.
+	 * Adds a given element to the page at the given index.
 	 * @param e the element to be added
+	 * @param i the current index of the element that will be the new element's next.
+	 * @throws AlbumIndexOutOfBounds if i<0 or i>the size of the elements' list
 	 */
-	public void AddElement(IAlbumElement e);
+	public void AddElement(IAlbumElement e, int i) throws AlbumIndexOutOfBounds;
 	
 	/**
 	 * Removes a specific element from the page.

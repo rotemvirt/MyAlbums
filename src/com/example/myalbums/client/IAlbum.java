@@ -1,7 +1,7 @@
 package com.example.myalbums.client;
 
 
-import java.util.Collection;
+import java.util.List;
 
 import android.net.Uri;
 
@@ -16,7 +16,7 @@ public interface IAlbum {
 	 * @return the album's pages
 	 */
 	
-	public Collection<IAlbumPage> GetPages();
+	public List<IAlbumPage> GetPages();
 	/**
 	 * 
 	 * @return the album's name
@@ -33,13 +33,15 @@ public interface IAlbum {
 	 * 
 	 * @return the album's locations
 	 */
-	public Collection<Uri> GetLocations();
+	public List<Uri> GetLocations();
 	
 	/**
 	 * Adds a given page to the album at the end of it.
 	 * @param p the page to be added
+	 * @param i the current index of the page that will be the new page's next.
+	 * @throws AlbumIndexOutOfBounds if i<0 or i>pages' list size
 	 */
-	public void AddPage(IAlbumPage p);
+	public void AddPage(IAlbumPage p, int i) throws AlbumIndexOutOfBounds;
 	
 	/**
 	 * Removes a specific page from the album.
