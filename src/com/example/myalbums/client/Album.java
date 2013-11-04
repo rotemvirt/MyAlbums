@@ -8,7 +8,7 @@ import android.net.Uri;
 
 /**
  * 
- * @author Rotem Virt
+ * @author Rotem Virt 
  * gmail: rotemvirt@gmail.com
  * Date of Creation: November 1st 2013
  *
@@ -17,7 +17,7 @@ public class Album implements IAlbum {
 	
 	private String name;
 	private String description;
-	private Collection<IAlbumElement> elements;
+	private Collection<IAlbumPage> pages;
 	private Collection<Uri> locations;
 	
 	/**
@@ -28,14 +28,14 @@ public class Album implements IAlbum {
 	public Album(String n, String d){
 		n = name;
 		d = description;
-		elements = new LinkedList<IAlbumElement>();
+		pages = new LinkedList<IAlbumPage>();
 		locations = new LinkedList<Uri>();
 	}
 
 
 	@Override
-	public Collection<IAlbumElement> GetElements() {
-		final Collection<IAlbumElement> $ = elements;
+	public Collection<IAlbumPage> GetPages() {
+		final Collection<IAlbumPage> $ = pages;
 		return $;
 	}
 
@@ -59,14 +59,14 @@ public class Album implements IAlbum {
 	}
 
 	@Override
-	public void AddElement(IAlbumElement e) {
-		elements.add(e);
+	public void AddPage(IAlbumPage p) {
+		pages.add(p);
 	}
 
 	@Override
-	public void RemoveElement(int i) throws AlbumIndexOutOfBounds {
+	public void RemovePage(int i) throws AlbumIndexOutOfBounds {
 		try{
-			elements.remove(i);
+			pages.remove(i);
 		}catch(IndexOutOfBoundsException e){
 			throw new AlbumIndexOutOfBounds();
 		}

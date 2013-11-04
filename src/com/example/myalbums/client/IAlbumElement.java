@@ -12,9 +12,9 @@ public interface IAlbumElement {
 	
 	/**
 	 * 
-	 * @return the element's image
+	 * @return the element's image key
 	 */
-	public Bitmap GetImage();
+	public String GetImage();
 	
 	/**
 	 * 

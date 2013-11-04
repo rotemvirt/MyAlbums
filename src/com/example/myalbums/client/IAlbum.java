@@ -13,10 +13,10 @@ import android.net.Uri;
 public interface IAlbum {
 	/**
 	 * 
-	 * @return the album's elements
+	 * @return the album's pages
 	 */
 	
-	public Collection<IAlbumElement> GetElements();
+	public Collection<IAlbumPage> GetPages();
 	/**
 	 * 
 	 * @return the album's name
@@ -36,18 +36,18 @@ public interface IAlbum {
 	public Collection<Uri> GetLocations();
 	
 	/**
-	 * Adds a given element to the album at the end of it.
-	 * @param e the element to be added
+	 * Adds a given page to the album at the end of it.
+	 * @param p the page to be added
 	 */
-	public void AddElement(IAlbumElement e);
+	public void AddPage(IAlbumPage p);
 	
 	/**
-	 * Removes a specific element from the album.
-	 * @param i the index of the element to be removed
+	 * Removes a specific page from the album.
+	 * @param i the index of the page to be removed
 	 * @throws AlbumIndexOutOfBounds when the given index is 
-	 * out of the elements' list bounds.
+	 * out of the pages' list bounds.
 	 */
-	public void RemoveElement(int i) throws AlbumIndexOutOfBounds;
+	public void RemovePage(int i) throws AlbumIndexOutOfBounds;
 	
 	/**
 	 * Changes the album's name

@@ -11,7 +11,7 @@ import android.net.Uri;
  * Date of Creation: October 31st 2013
  */
 public class AlbumElement implements IAlbumElement {
-	private final Bitmap image;
+	private final String image;
 	private final String title;
 	private final String description;
 	private final Uri location;
@@ -24,7 +24,7 @@ public class AlbumElement implements IAlbumElement {
 	 * @param d the element's description
 	 * @param l the element's location
 	 */
-	public AlbumElement(Bitmap i, String t, String d, Uri l){
+	public AlbumElement(String i, String t, String d, Uri l){
 		image =i;
 		title = t;
 		description = d;
@@ -32,8 +32,8 @@ public class AlbumElement implements IAlbumElement {
 	}
 
 	@Override
-	public Bitmap GetImage() {
-		final Bitmap $ = image;
+	public String GetImage() {
+		final String $ = image;
 		return $;
 	}
 
